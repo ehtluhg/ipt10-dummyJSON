@@ -19,7 +19,7 @@ $item = [
        ]
    ]; 
 
-$response = $client->get('https://dummyjson.com/products/add', $item);
+$response = $client->post('https://dummyjson.com/products/add', $item);
 $code = $response->getStatusCode();
 $body = $response->getBody();
 $item = json_decode($body, true);

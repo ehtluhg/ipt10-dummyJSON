@@ -9,13 +9,13 @@ $client = new Client([
 ]);
 
 // Handling HTTP Response
-$update = [
+$delete = [
     'products' => [
         'title' => 'iPhone 11'
        ]
    ]; 
 
-$response = $client->put('https://dummyjson.com/products/add/1', $update);
+$response = $client->delete('https://dummyjson.com/products/add/1', $delete);
 $code = $response->getStatusCode();
 $body = $response->getBody();
 $item = json_decode($body, true);
