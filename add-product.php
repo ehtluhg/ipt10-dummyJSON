@@ -12,19 +12,16 @@ $client = new Client([
 $id = $_GET['product_id'];
 
 // Handling HTTP Response
-$options = [
+$item = [
     'products' => [
-        'title' => 'value';
-        'price' => 'value';
-        'category' => 'value';
-        'description' => 'value';
+        'title' => 'value',
+        'category' => 'value'
        ]
    ]; 
-$response = $client->post("/post", $options);
 
-echo $response->getBody();
-$response = $client->get('https://dummyjson.com/products/add/' . $id);
+$response = $client->get('https://dummyjson.com/products/add', $item);
 $code = $response->getStatusCode();
 $body = $response->getBody();
-$products = json_decode($body, true);
+$item = json_decode($body, true);
+var_dump($item)
 ?>
