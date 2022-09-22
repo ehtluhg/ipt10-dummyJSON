@@ -10,14 +10,14 @@ $client = new Client([
 
 // Handling HTTP Response
 $update = [
-    'products' => [
+    'json' => [
         'title' => 'iPhone 11'
        ]
    ]; 
 
-$response = $client->put('https://dummyjson.com/products/add/1', $update);
+$response = $client->put('https://dummyjson.com/products/1', $update);
 $code = $response->getStatusCode();
 $body = $response->getBody();
-$item = json_decode($body, true);
-var_dump($item)
+$update = json_decode($body, true);
+var_dump($update)
 ?>

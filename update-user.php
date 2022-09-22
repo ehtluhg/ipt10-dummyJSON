@@ -8,20 +8,16 @@ $client = new Client([
         'base_uri' => 'https://dummyjson.com/'
 ]);
 
-// Retrieving the Product ID
-$id = $_GET['product_id'];
-
 // Handling HTTP Response
-$item = [
+$update = [
     'json' => [
-        'title' => 'iPhone 10',
-        'category' => 'smartphones'
+        'firstName' => 'Milburn'
        ]
    ]; 
 
-$response = $client->post('https://dummyjson.com/products/add', $item);
+$response = $client->put('https://dummyjson.com/users/1', $update);
 $code = $response->getStatusCode();
 $body = $response->getBody();
-$item = json_decode($body, true);
-var_dump($item)
+$user = json_decode($body, true);
+var_dump($user)
 ?>

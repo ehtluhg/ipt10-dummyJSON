@@ -10,7 +10,7 @@ $client = new Client([
 
 // Handling HTTP Response
 $delete = [
-    'products' => [
+    'json' => [
         'title' => 'iPhone 11'
        ]
    ]; 
